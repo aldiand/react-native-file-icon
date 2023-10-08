@@ -2,9 +2,10 @@
 
 React Native component that makes it easy to render themeable svg file icons.
 React Native version of [react-file-icon](https://github.com/corygibbons/react-file-icon).
-This library only supports iOS and Android.
-for web support use [react-file-icon](https://github.com/corygibbons/react-file-icon)
+This library supports iOS, Android, and Web.
 
+## Demo
+[Expo Snack](https://snack.expo.dev/@aldiand/react-native-file-icon)
 ## Installation
 
 ```sh
