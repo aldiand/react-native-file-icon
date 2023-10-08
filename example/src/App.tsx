@@ -1,18 +1,22 @@
 import * as React from 'react';
 
-import { StyleSheet, View, Text } from 'react-native';
-import { multiply } from 'react-native-file-icon';
+import { ScrollView, StyleSheet, View } from 'react-native';
+import { FileIcon, defaultStyles } from 'react-native-file-icon';
 
 export default function App() {
-  const [result, setResult] = React.useState<number | undefined>();
-
-  React.useEffect(() => {
-    multiply(3, 7).then(setResult);
-  }, []);
+  const styledIcons = Object.keys(defaultStyles);
 
   return (
     <View style={styles.container}>
-      <Text>Result: {result}</Text>
+      <ScrollView style={styles.scroll}>
+        <View style={styles.content}>
+          {styledIcons.map((icon) => (
+            <View style={styles.box} key={icon}>
+              <FileIcon extension={icon} {...defaultStyles[icon]} />
+            </View>
+          ))}
+        </View>
+      </ScrollView>
     </View>
   );
 }
@@ -23,9 +27,17 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  scroll: {
+    flex: 1,
+  },
+  content: {
+    flex: 1,
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+  },
   box: {
     width: 60,
     height: 60,
-    marginVertical: 20,
+    margin: 4,
   },
 });
