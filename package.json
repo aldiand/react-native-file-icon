@@ -1,6 +1,6 @@
 {
   "name": "react-native-file-icon",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "React Native component that makes it easy to render themeable svg file icons.",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
